@@ -37,9 +37,8 @@ function checkList(x) {
   });
   if (document.querySelectorAll('li.hidden').length == textArr.length) {
     document.getElementById('results').textContent = "no results found";
-  }
-  else {
-  	document.getElementById('results').textContent = document.querySelectorAll('li:not([class*="hidden"]').length + ' Results';
+  } else {
+    document.getElementById('results').textContent = document.querySelectorAll('li:not([class*="hidden"]').length + ' Results';
   }
 }
 
