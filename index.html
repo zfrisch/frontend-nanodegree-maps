@@ -8,6 +8,7 @@
   <title></title>
 </head>
 <body style="height: 96vh; width: 100vw;">
+<span id="Loading"><h1>Loading...</h1></span>
   <div class="lower" id="sideNav">
     <span id="listHeading">Night Spots in GB</span><br>
 	<input placeholder="Search..." data-bind="value: name, valueUpdate: 'afterkeydown'"><br>
@@ -15,6 +16,8 @@
     <ul id="listOfPlaces"></ul>
   </div>
   <div id="map" style="left: 0; height: 94%; width:100%;"></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/pokeapi.js"></script>
   <script src="js/knockout.js"></script>
   <script src="js/viewmodel.js"></script>
   <script src="js/app.js"></script> 

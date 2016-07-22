@@ -146,10 +146,17 @@ function initMap() {
   lat: 44.517012,  
   lng: -88.014529 }];
   var markers = [];
-  var Places = ['Skirtz Lounge', 'Cock & Bull Public Haus', 'The Nines', 'Ned Kelly\'s', 'Shenanigans Irish Pub', 'Hagermeister Park'];
-  var infoText = ['The First Marker!', 'The Second Marker!'];
-
+ 
+   var Places = ['Skirtz Lounge', 'Cock & Bull Public Haus', 'The Nines', 'Ned Kelly\'s', 'Shenanigans Irish Pub', 'Hagermeister Park'];
+  var infoText = [];
+  document.getElementById('Loading').style.visibility = 'visible';
+setTimeout(function() {
+	document.getElementById('Loading').style.visibility = 'hidden';
   Places.forEach(function(item, index) {
+	  console.log(PokeArray);
+    infoText.push('<h1>' + Places[index] + 
+	'</h1><br><h2>Most Common Pokemon Here:<br><h1>' + 
+	PokeArray[index].name + '</h1><br><strong>Type:</strong><h1>' + PokeArray[index].type + '</h1><br></h2><img class="poke" src="' + PokeArray[index].picture + '"/>');
     var liI = document.createElement('li');
     liI.textContent = Places[index];
     liI.setAttribute('data-id', index);
@@ -199,4 +206,5 @@ function initMap() {
   }
 
   map.fitBounds(bounds);
+}, 15000);
 }

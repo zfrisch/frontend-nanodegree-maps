@@ -1,6 +1,20 @@
 body {
 background-color: black;
 }
+#Loading {
+position: absolute;
+left:35%;
+top:35%;
+font-weight: bolder;
+color: red;
+font-size: 50px;
+z-index: 5;
+animation: inout 1s alternate infinite;
+visibility: hidden;
+}
+img.poke {
+transform: scale(2);
+}
 .hidden {
   display: none;
 }
@@ -68,4 +82,10 @@ cursor: pointer;
 }
 #listOfPlaces li:hover {
 color: rgba(255, 0, 255, 1);
+}
+
+@keyframes inout {
+0% { opacity: 1;}
+100% { opacity: 0;}
+
 }
