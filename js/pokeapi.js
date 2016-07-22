@@ -1,5 +1,8 @@
 var PokeArray = [];
 (function() {
+  $(document).ajaxError(function() {
+    alert("error with API call. Please Refresh or try again later!");
+  });
   getPokeInfo(2);
   getPokeInfo(5);
   getPokeInfo(6);
@@ -16,9 +19,7 @@ function getPokeInfo(x) {
       name: data.name,
       picture: data.sprites.front_default,
       type: data.types[0].type.name
-    }.error(function() {
-      alert("error with API call. Please Refresh or try again later!");
-    });
+    }
     pokeFind(pokeObject);
   });
 
